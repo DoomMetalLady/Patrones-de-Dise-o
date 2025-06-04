@@ -1,0 +1,19 @@
+ Ejercicio 3:
+ Piense en 3 problemas habituales de su vida diaria (organizacion de horarios, menu de comidas diario, facil ,rapido ,rico y nutritivo y salydable, y por ultimo administrar el sueldo de manera eficiente) en los cuales podría aplicar patrones de diseño. 
+
+
+1. Organización de horarios (Planificación de tareas diarias):
+   Patrón: Strategy
+   - Descripción: Puedes definir diferentes algoritmos o estrategias para organizar tu día, como horarios matutinos, vespertinos o bloques de trabajo y descanso. Cada estrategia puede ser encapsulada en una clase diferente y seleccionada dinámicamente según tus necesidades o preferencias.
+   -Ejemplo:Tener una interfaz `EstrategiaHorario`, con implementaciones como `HorarioFlexible`, `Horario Estricto`, `Horario Personalizado`, y seleccionar la estrategia adecuada según el día o actividad.
+
+2. Menú de comidas diario (Planificación de comidas rápidas, nutritivas y sabrosas):
+   Patrón Factory
+   - Descripción:Para crear diferentes opciones de menús según el tiempo disponible, ingredientes o preferencias, puedes usar una fábrica que genere diferentes tipos de menús (rápido, nutritivo, sabroso). Esto permite cambiar fácilmente el tipo de menú sin modificar el código cliente.
+   - Ejemplo: Una interfaz `MenuFactory` con implementaciones como `MenuRapidoFactory`, `MenuNutritivoFactory`, `MenuSabrosoFactory`, que crean objetos `Menu` específicos.
+
+3. Administrar el sueldo de manera eficiente:
+   Patrón Command
+   - Descripción: Para gestionar diferentes acciones relacionadas con el sueldo, como pagar, ahorrar o invertir, puedes encapsular estas acciones en comandos independientes. Esto facilita agregar nuevas acciones, deshacer operaciones o registrar acciones para auditoría.
+   - Ejemplo: Clases como `PagarSueldoCommand`, `GuardarDineroCommand`, `InvertirDineroCommand`, que implementan una interfaz `Command` con un método `ejecutar()`.
+
