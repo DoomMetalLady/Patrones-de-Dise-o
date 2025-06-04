@@ -1,0 +1,109 @@
+Ejercicio 2:
+Seleccione 3 patrones de diseño e implementarlos en Python. Arme ejemplos concretos de uso. Lo ideal es 
+elegir un patrón de cada clasificación
+
+Factory Method
+
+from abc import ABC, abstractmethod
+
+class Product(ABC):
+    @abstractmethod
+    def operation(self):
+        pass
+
+class ConcreteProductA(Product):
+    def operation(self):
+        return "Producto A creado"
+
+class ConcreteProductB(Product):
+    def operation(self):
+        return "Producto B creado"
+
+class Creator(ABC):
+    @abstractmethod
+    def factory_method(self) -> Product:
+        pass
+
+    def some_operation(self):
+        product = self.factory_method()
+        return f"Operando con {product.operation()}"
+
+class ConcreteCreatorA(Creator):
+    def factory_method(self) -> Product:
+        return ConcreteProductA()
+
+class ConcreteCreatorB(Creator):
+    def factory_method(self) -> Product:
+        return ConcreteProductB()
+
+
+creator_a = ConcreteCreatorA()
+print(creator_a.some_operation())
+
+creator_b = ConcreteCreatorB()
+print(creator_b.some_operation())
+
+
+
+Decorator
+
+from abc import ABC, abstractmethod
+
+class Component(ABC):
+    @abstractmethod
+    def operation(self):
+        pass
+
+class ConcreteComponent(Component):
+    def operation(self):
+        return "Componente base"
+
+class Decorator(Component):
+    def __init__(self, component: Component):
+        self._component = component
+
+    def operation(self):
+        return f"{self._component.operation()} + Funcionalidad extra"
+
+
+base = ConcreteComponent()
+decorado = Decorator(base)
+
+print(base.operation())   
+print(decorado.operation())  
+
+Strategy
+
+from abc import ABC, abstractmethod
+
+class Strategy(ABC):
+    @abstractmethod
+    def execute(self, a, b):
+        pass
+
+class ConcreteStrategyAdd(Strategy):
+    def execute(self, a, b):
+        return a + b
+
+class ConcreteStrategyMultiply(Strategy):
+    def execute(self, a, b):
+        return a * b
+
+class Context:
+    def __init__(self, strategy: Strategy):
+        self._strategy = strategy
+
+    def set_strategy(self, strategy: Strategy):
+        self._strategy = strategy
+
+    def execute_strategy(self, a, b):
+        return self._strategy.execute(a, b)
+
+
+context = Context(ConcreteStrategyAdd())
+print(context.execute_strategy(3, 4))  # 7
+
+context.set_strategy(ConcreteStrategyMultiply())
+print(context.execute_strategy(3, 4))  # 12
+
+
