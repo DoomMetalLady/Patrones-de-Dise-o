@@ -3,27 +3,27 @@ Los antipatrones de diseño son soluciones comunes a problemas de diseño de sof
 Ejemplos de antipatrones de diseño:
 
 1. God Object (Objeto Dios):
-   - **Descripción:** Un solo objeto o clase que centraliza demasiadas responsabilidades, controlando múltiples aspectos del sistema.
-   - **Problemas:** Dificultad para entender, mantener y modificar el código, además de violar el principio de responsabilidad única.
-   - **Ejemplo:** Una clase `Sistema` que gestiona la interfaz, la base de datos, la lógica de negocio y la gestión de usuarios.
+   - Descripción: Un solo objeto o clase que centraliza demasiadas responsabilidades, controlando múltiples aspectos del sistema.
+   - Problemas: Dificultad para entender, mantener y modificar el código, además de violar el principio de responsabilidad única.
+   - Ejemplo: Una clase `Sistema` que gestiona la interfaz, la base de datos, la lógica de negocio y la gestión de usuarios.
 
 2. Spaghetti Code (Código Espagueti):
-   - **Descripción:** Código con estructuras de control enmarañadas, sin una organización clara o modular.
-   - **Problemas:** Difícil de entender, probar y mantener, aumenta la probabilidad de errores.
-   - **Ejemplo:** Funciones largas con múltiples niveles de anidamiento y sin separación de responsabilidades.
+   - Descripción: Código con estructuras de control enmarañadas, sin una organización clara o modular.
+   - Problemas: Difícil de entender, probar y mantener, aumenta la probabilidad de errores.
+   - Ejemplo: Funciones largas con múltiples niveles de anidamiento y sin separación de responsabilidades.
 
 3. Golden Hammer (Martillo de Oro):
-   - **Descripción:** Usar una misma solución o patrón para todos los problemas, independientemente del contexto.
-   - **Problemas:** La solución no siempre es apropiada, puede ser ineficiente o inapropiada para ciertos casos.
-   - **Ejemplo:** Usar un patrón Singleton en todos los objetos, incluso cuando no es necesario.
+   - Descripción: Usar una misma solución o patrón para todos los problemas, independientemente del contexto.
+   - Problemas: La solución no siempre es apropiada, puede ser ineficiente o inapropiada para ciertos casos.
+   - Ejemplo: Usar un patrón Singleton en todos los objetos, incluso cuando no es necesario.
 
 4. Copy-Paste Programming (Programación por Copiar y Pegar):
-   - **Descripción:** Copiar bloques de código en lugar de crear funciones o clases reutilizables.
-   - **Problemas:** Dificultad para mantener, errores repetidos y dificultad para implementar cambios globales.
-   - **Ejemplo:** Copiar y pegar código similar en diferentes partes del programa para realizar tareas similares.
+   - Descripción: Copiar bloques de código en lugar de crear funciones o clases reutilizables.
+   - Problemas: Dificultad para mantener, errores repetidos y dificultad para implementar cambios globales.
+   - Ejemplo: Copiar y pegar código similar en diferentes partes del programa para realizar tareas similares.
 
 5. Lava Flow (Flujo de Lava):
-   - **Descripción:** Código heredado o sin refactorizar que permanece en el sistema, dificultando su comprensión y mantenimiento.
-   - **Problemas:** Hace que el sistema sea difícil de modificar y aumentar el riesgo de introducir errores.
-   - **Ejemplo:** Módulos antiguos que no cumplen con los estándares actuales y no están documentados.
+   - Descripción: Código heredado o sin refactorizar que permanece en el sistema, dificultando su comprensión y mantenimiento.
+   - Problemas: Hace que el sistema sea difícil de modificar y aumentar el riesgo de introducir errores.
+   - Ejemplo: Módulos antiguos que no cumplen con los estándares actuales y no están documentados.
 
